@@ -1,6 +1,6 @@
-# Avatar Generation and Retrieval System
+# Avatar Retrieval System
 
-The Avatar Generation and Retrieval System is a Laravel-based web application that allows users to request AI-generated
+The Avatar Retrieval System is a Laravel-based web application that allows users to request AI-generated
 avatars by specifying their size, a unique identifier, and the preferred sex. These avatars are intended for
 demonstration purposes and are generated based on user-provided inputs.
 
