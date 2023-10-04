@@ -23,13 +23,13 @@ Route::get('/avatar', [\App\Http\Controllers\AvatarController::class, 'index'])
     ->middleware('auth')
     ->name('avatar.index');
 
-Route::get('/avatar/{avatar}', [\App\Http\Controllers\AvatarController::class, 'showid'])
-    ->middleware('auth')
-    ->name('avatar.showid');
-
 Route::get('/avatar/create', [\App\Http\Controllers\AvatarController::class, 'create'])
     ->middleware('auth')
     ->name('avatar.create');
+
+Route::get('/avatar/{avatar}', [\App\Http\Controllers\AvatarController::class, 'showid'])
+    ->middleware('auth')
+    ->name('avatar.showid');
 
 Route::post('/avatar', [\App\Http\Controllers\AvatarController::class, 'store'])
     ->name('avatar.store');
