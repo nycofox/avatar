@@ -3,6 +3,7 @@
         <div class="card-body">
             <h2>Welcome to the Avatar App!</h2>
             <p>There are currently {{ $total_count }} avatars available to use!</p>
+            <p>We've served a total of {{ $total_requests }} request.</p>
             <h3>Instructions:</h3>
 
             <p>To request an avatar, use the following URL format:</p>

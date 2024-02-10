@@ -33,6 +33,8 @@ class AvatarController extends Controller
                 ->resize($this->size, $this->size);
         }, 60*24*365, true);
 
+        $this->addRequest();
+
         return $img->response();
 
 //        return Image::make(storage_path('app/' . Avatar::find($image)->path))->resize($size, $size)->response();
@@ -143,6 +145,23 @@ class AvatarController extends Controller
         }
 
         return 150;
+    }
+
+    private function addRequest()
+    {
+//        dd(request()->headers->get('referer'));
+
+        $request = request();
+        $referer = $request->headers->get('referer');
+        $path = $request->getRequestUri();
+
+        \App\Models\Request::create([
+            'user_ip' => $request->ip(),
+            'user_agent' => $request->userAgent(),
+            'referer' => $referer,
+            'path' => $path,
+            'avatar_id' => $this->image_path,
+        ]);
     }
 
 }
